@@ -1,0 +1,124 @@
+{% extends 'ports/base.html' %}
+
+{% load static %}
+{% block content %}
+  <!-- ====== Banner Section Start ====== -->
+
+  <!-- ====== Banner Section End ====== -->
+
+  <section class="service section" id="services">
+    <div class="container">
+      <section class="banner">
+            <h2>Hire Me For</h2>
+            <h1>Services</h1>
+            <a href="mailto:raajchauh@gmail.com" class="btn-mail">📩 Mail Me</a>
+            <div class="availability">
+                <span>Job, Freelance, Projectwise Available</span>
+                <h3>AI / ML</h3>
+            </div>
+    </section>
+      <div class="row">
+        <div class="section-title padd-15">
+        </div>
+      </div>
+      <div class="row">
+        <!-- Skill Items -->
+        <div class="service-item padd-15">
+          <div class="service-item-inner">
+            <i class="fa-brands fa-html5 fa-2x"></i>
+            <h4>Web Design</h4>
+            <p>HTML, CSS, SASS & Bootstrap</p>
+          </div>
+        </div>
+
+        <div class="service-item padd-15">
+          <div class="service-item-inner">
+            <i class="fa-brands fa-js fa-2x"></i>
+            <h4>JavaScript</h4>
+            <p>jQuery, React Js</p>
+          </div>
+        </div>
+
+        <div class="service-item padd-15">
+          <div class="service-item-inner">
+            <i class="fa-brands fa-python fa-2x"></i>
+            <h4>Python</h4>
+            <p>Python and Framework</p>
+            <div class="more-content" style="display: none;">
+              <p>Python Core, Flask, Django, Script Files, AI/ML, Pytorch, Tensorflow, Keras, NumPy, Pandas, SciPy, Scikit-learn, Google Collab, Model Creation and Deployment</p>
+            </div>
+            <button class="read-more-btn btn btn-primary" onclick="toggleReadMore(this)">Read More</button>
+          </div>
+        </div>
+
+        <div class="service-item padd-15">
+          <div class="service-item-inner">
+            <i class="fa-solid fa-gear fa-2x"></i>
+            <h4>Tools and Technologies</h4>
+            <p>Postman, Git, VS Code, IntelliJ, Agile</p>
+            <div class="more-content" style="display: none;">
+              <p>JIRA, Docker, Kubernetes, Azure, AWS, Google Cloud, VS Code Editor,VS Code</p>
+            </div>
+            <button class="read-more-btn btn btn-primary" onclick="toggleReadMore(this)">Read More</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function toggleReadMore(button) {
+      const moreContent = button.previousElementSibling;
+      if (moreContent.style.display === "none") {
+        moreContent.style.display = "block";
+        button.textContent = "Read Less";
+      } else {
+        moreContent.style.display = "none";
+        button.textContent = "Read More";
+      }
+    }
+  </script>
+
+  <style>
+    .banner {
+        background: linear-gradient(to bottom, #00214d, #000);
+        color: white;
+        padding: 50px 0;
+        text-align: center;
+    }
+
+    .banner h2 {
+        font-size: 2rem;
+        color: #FFD700;
+    }
+
+    .banner h1 {
+        font-size: 3rem;
+        font-weight: bold;
+    }
+
+    .btn-mail {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 10px 20px;
+        background-color: #FFD700;
+        color: black;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 5px;
+    }
+
+    .availability {
+        margin-top: 20px;
+        font-size: 1rem;
+        color: #FFD700;
+    }
+
+    .availability h3 {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-top: 5px;
+    }
+  </style>
+{% endblock %}

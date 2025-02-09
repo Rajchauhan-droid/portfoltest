@@ -1,0 +1,146 @@
+{% load static %}
+<div class="aside">
+  <div class="logo">
+    <a href="{% url 'main:home' %}">
+      <img src="{% static 'images/hero.png' %}" alt="Profile Picture" class="profile-pic">
+      <p class="profile-name">Raj Chauhan</p>
+    </a>
+  </div>
+  <div class="nav-toggler">
+    <span></span>
+  </div>
+  <ul class="nav">
+    <li><a href="{% url 'main:home' %}" class="active"><i class="fa fa-home"></i> Home</a></li>
+    <li><a href="{% url 'main:about' %}"><i class="fa fa-user"></i> About</a></li>
+    <li><a href="{% url 'main:services' %}"><i class="fa fa-list"></i> Services</a></li>
+    <li><a href="{% url 'main:portfolio' %}"><i class="fa fa-briefcase"></i> Portfolio</a></li>
+    <li><a href="{% url 'main:contact' %}"><i class="fa fa-comments"></i> Contact</a></li>
+  </ul>
+</div>
+
+<style>
+  /* Basic Styles */
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  .aside {
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    height: 100%;
+    background: #ffffff;
+    color: #333;
+    transition: left 0.3s ease;
+    z-index: 1000;
+    text-align: center;
+  }
+
+  .aside.open {
+    left: 0;
+  }
+
+  .logo {
+    padding: 20px;
+    background: #ffffff;
+  }
+
+  .profile-pic {
+    width: 100px;
+    height: auto;
+    max-height: 120px;
+    object-fit: contain;
+  }
+
+  .profile-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #333;
+  }
+
+  .nav-toggler {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    z-index: 1100;
+  }
+
+  .nav-toggler span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: #333;
+    margin: 6px 0;
+    transition: transform 0.3s ease;
+  }
+
+  .nav {
+    list-style: none;
+    padding: 20px;
+    margin: 0;
+  }
+
+  .nav li {
+    margin: 20px 0;
+  }
+
+  .nav a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    font-size: 18px;
+  }
+
+  .nav a.active {
+    background: #ffb0b0;
+    border-radius: 5px;
+  }
+
+  /* Responsive Styles */
+  @media (min-width: 768px) {
+    .aside {
+      left: 0;
+    }
+
+    .nav-toggler {
+      display: none;
+    }
+
+    .aside.open {
+      left: 0;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .nav a {
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .nav a {
+      font-size: 14px;
+    }
+
+    .nav li {
+      margin: 10px 0;
+    }
+  }
+</style>
+
+<script>
+  // JavaScript for toggle functionality
+  document.addEventListener("DOMContentLoaded", function () {
+    const navToggler = document.querySelector(".nav-toggler");
+    const aside = document.querySelector(".aside");
+
+    navToggler.addEventListener("click", function () {
+      aside.classList.toggle("open");
+    });
+  });
+</script>
