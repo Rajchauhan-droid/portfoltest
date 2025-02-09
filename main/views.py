@@ -24,7 +24,7 @@ def contact(request):
                     contact_name,
                     content,
                     contact_email,
-                    ['chauhanraj22102022@gmail.com'],  # Change to your email
+                    ['raajchauh@gmail.com'],  # Change to your email
                     reply_to=[contact_email],
                 )
                 email.send()
